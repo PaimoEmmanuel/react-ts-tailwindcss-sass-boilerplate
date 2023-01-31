@@ -1,8 +1,14 @@
-import * as React from "react";
+import { useState } from "react";
+import WishForm from "../organisms/wish-form";
 
 interface IEventDetailProps {}
 
 const EventDetail: React.FunctionComponent<IEventDetailProps> = (props) => {
+  const [LikeClicked, setLikeClicked] = useState(false);
+  const [liked, setLiked] = useState(false);
+  const [likes, setLikes] = useState(0);
+  const [shareClicked, setShareClicked] = useState(false);
+  const [openForm, setOpenForm] = useState(false);
   return (
     <div className="site-container">
       <div className="event__detail">
@@ -20,9 +26,22 @@ const EventDetail: React.FunctionComponent<IEventDetailProps> = (props) => {
               <p className="event__about--title">Event Created By:</p>
               <p className="event__about--text">NLWC Church Publicity</p>
             </div>
-            <button className="event__likes" onClick={() => {
-              
-            }}>
+            <button
+              className={`event__likes ${LikeClicked ? "clicked" : ""} ${
+                liked ? "liked" : ""
+              }`}
+              onClick={() => {
+                // add 'clicked' to class list
+                setLikeClicked(true);
+                setTimeout(() => {
+                  setLikeClicked(false);
+                  setLiked(true);
+                  if (liked === false) {
+                    setLikes(likes + 1);
+                  }
+                }, 3000);
+              }}
+            >
               <svg
                 width="18"
                 height="16"
@@ -38,7 +57,7 @@ const EventDetail: React.FunctionComponent<IEventDetailProps> = (props) => {
                   stroke-linejoin="round"
                 />
               </svg>
-              0
+              {LikeClicked ? "Liked!" : likes}
             </button>
           </div>
           <div className="event__date--wrapper">
@@ -46,7 +65,15 @@ const EventDetail: React.FunctionComponent<IEventDetailProps> = (props) => {
               <p className="event__about--title">Event Created By:</p>
               <p className="event__about--text">NLWC Church Publicity</p>
             </div>
-            <button className="event__share">
+            <button
+              className={`event__share ${shareClicked ? "clicked" : ""}`}
+              onClick={() => {
+                setShareClicked(true);
+                setTimeout(() => {
+                  setShareClicked(false);
+                }, 3000);
+              }}
+            >
               <svg
                 width="20"
                 height="20"
@@ -83,12 +110,28 @@ const EventDetail: React.FunctionComponent<IEventDetailProps> = (props) => {
                   </clipPath>
                 </defs>
               </svg>
-              Share event link
+              {shareClicked ? "Link copied!" : "Share event link"}
             </button>
           </div>
         </div>
       </div>
-      <button className="event__wish-btn">Send your well wishes.</button>
+      <button
+        className="event__wish-btn"
+        onClick={() => {
+          setOpenForm(true);
+        }}
+      >
+        Send your well wishes.
+      </button>
+      {openForm ? (
+        <WishForm
+          closeForm={() => {
+            setOpenForm(false);
+          }}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 };

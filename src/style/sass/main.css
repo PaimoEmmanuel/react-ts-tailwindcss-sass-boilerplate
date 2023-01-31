@@ -185,6 +185,43 @@ img {
 .gallery-tab {
   @apply grid grid-cols-4 gap-8 mb-56;
 }
+.gallery-tab img {
+  box-shadow: 6px 0px 32px 1px rgba(0, 0, 0, 0.34);
+}
+
+.wish__modal {
+  @apply h-screen w-screen fixed top-0 left-0 bg-[rgba(0,0,0,0.5)];
+}
+.wish__form {
+  @apply w-[31.25rem] mx-auto relative top-1/2 -translate-y-1/2 pt-12 px-10 pb-10 rounded-lg border border-[#FFFCE9];
+  background: linear-gradient(133.79deg, rgba(255, 255, 255, 0.1) 8.82%, rgba(255, 255, 255, 0.1) 114.71%);
+  backdrop-filter: blur(40px);
+}
+.wish__form--img {
+  @apply rounded border border-white mx-auto;
+  filter: drop-shadow(0px 8px 40px rgba(0, 0, 0, 0.15));
+}
+.wish__form--heading {
+  @apply text-2xl font-medium mt-5 mb-3 text-center;
+}
+.wish__form--text {
+  @apply max-w-[20.25rem] mx-auto text-center text-sm mb-10;
+}
+.wish__form--label {
+  @apply block text-sm mb-2;
+}
+.wish__form--input {
+  @apply w-full h-[3.125rem] bg-[#2F2F2F] rounded-[0.1875rem] border border-[#B4B4B4] px-6 text-sm mb-9;
+}
+.wish__form--textarea {
+  @apply w-full py-3.5 px-6 bg-[#2F2F2F] rounded-[0.1875rem] border border-[#B4B4B4] text-sm;
+}
+.wish__form--send {
+  @apply w-full flex justify-center items-center font-medium h-[3.125rem] rounded-full bg-[#686868] mt-11;
+}
+.wish__form--close {
+  @apply absolute top-5 right-10;
+}
 
 .home {
   @apply bg-dark text-white;
@@ -217,8 +254,20 @@ img {
 .event__date--wrapper {
   @apply flex flex-col justify-between;
 }
+.event__date--wrapper .event__likes.clicked {
+  @apply bg-[#4B4D4F];
+}
+.event__date--wrapper .event__likes.clicked svg {
+  @apply fill-white;
+}
+.event__date--wrapper .event__share.clicked {
+  @apply bg-[#4B4D4F];
+}
+.event__date--wrapper .liked svg {
+  @apply fill-white;
+}
 .event__likes {
-  @apply flex rounded-full border border-white w-11/12 mx-auto justify-center gap-5 h-10 items-center;
+  @apply flex rounded-full border border-white w-11/12 mx-auto justify-center gap-5 h-10 items-center transition-all;
 }
 .event__share {
   @apply flex rounded-full border border-white w-full mx-auto justify-center gap-2 h-10 items-center;

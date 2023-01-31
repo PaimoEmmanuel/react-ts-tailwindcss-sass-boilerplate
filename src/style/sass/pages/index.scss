@@ -27,10 +27,24 @@
     @apply flex gap-[8.25rem] whitespace-nowrap;
     &--wrapper {
       @apply flex flex-col justify-between;
+      .event__likes.clicked {
+        @apply bg-[#4B4D4F];
+        svg {
+          @apply fill-white;
+        }
+      }
+      .event__share.clicked {
+        @apply bg-[#4B4D4F];
+      }
+      .liked {
+        svg {
+          @apply fill-white;
+        }
+      }
     }
   }
   &__likes {
-    @apply flex rounded-full border border-white w-11/12 mx-auto justify-center gap-5 h-10 items-center;
+    @apply flex rounded-full border border-white w-11/12 mx-auto justify-center gap-5 h-10 items-center transition-all;
   }
   &__share {
     @apply flex rounded-full border border-white w-full mx-auto justify-center gap-2 h-10 items-center;
