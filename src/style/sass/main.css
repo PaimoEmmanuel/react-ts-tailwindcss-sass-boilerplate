@@ -1,3 +1,30 @@
-.header {
-  @apply text-3xl font-bold underline;
+.nav-bar--container {
+  @apply px-[121px] py-[25px] w-full flex justify-between items-center;
+  background: linear-gradient(90.14deg, rgba(255, 255, 255, 0.6) -0.83%, rgba(255, 255, 255, 0.2) 99.95%, rgba(255, 255, 255, 0.1) 99.95%);
+}
+
+.nav-bar--image-logo {
+  @apply flex items-center;
+}
+.nav-bar--image-logo__img-one {
+  @apply relative flex items-center;
+}
+.nav-bar--image-logo__img-one > img {
+  @apply z-10;
+}
+.nav-bar--image-logo__img-one > span {
+  @apply absolute left-[-2px] inline-block rounded-[50%] w-[48px] h-[48px] bg-[#F6D124];
+}
+.nav-bar--image-logo__img-two {
+  @apply relative flex items-center;
+}
+.nav-bar--image-logo__img-two > img {
+  @apply z-10;
+}
+.nav-bar--image-logo__img-two > span {
+  @apply absolute right-[-3px] inline-block rounded-[50%] w-[48px] h-[48px] bg-[#fb987e];
+}
+
+.home {
+  @apply bg-dark;
 }
