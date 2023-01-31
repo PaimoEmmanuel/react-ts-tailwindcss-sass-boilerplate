@@ -1,11 +1,14 @@
-.nav-bar--container {
-  @apply px-[121px] py-[25px] w-full flex justify-between items-center;
+.nav-bar {
   background: linear-gradient(
     90.14deg,
     rgba(255, 255, 255, 0.6) -0.83%,
     rgba(255, 255, 255, 0.2) 99.95%,
     rgba(255, 255, 255, 0.1) 99.95%
   );
+  backdrop-filter: blur(30px);
+  &--container {
+    @apply site-container py-[25px] w-full flex justify-between items-center;
+  }
 }
 
 .nav-bar--image-logo {

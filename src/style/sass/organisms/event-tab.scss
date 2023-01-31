@@ -1,0 +1,38 @@
+.event__tab {
+  @apply site-container;
+  &--btn {
+    @apply flex mb-14;
+    button {
+      @apply w-1/2 py-4 text-xl;
+    }
+    .active-btn {
+      @apply bg-dark-100 border-b-2 border-b-white;
+    }
+  }
+  &--head {
+    @apply flex justify-between mb-14;
+  }
+  &--filter {
+    @apply flex gap-5 items-center text-2xl;
+    &-text {
+      @apply text-2xl font-medium;
+    }
+  }
+  &--item {
+    @apply hidden;
+  }
+  .active-tab {
+    @apply block;
+  }
+}
+.wish {
+  &__items {
+    @apply flex flex-col gap-14 mb-24;
+  }
+  &__load-more {
+    @apply w-full h-16 flex justify-center items-center bg-dark-200 rounded-full border border-white mb-20;
+  }
+}
+.gallery-tab {
+  @apply grid grid-cols-4 gap-8 mb-56;
+}

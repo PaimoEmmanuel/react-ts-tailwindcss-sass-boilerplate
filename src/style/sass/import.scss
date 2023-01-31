@@ -1,11 +1,16 @@
+// BASE
+@import "./base/base";
+@import "./base/utilities";
+
 // ATOMS
 @import "./atoms/atom";
 
 // MOLECULES
 @import "./molecules/navbar";
+@import "./molecules/wish-item";
 
 // ORGANISMS
-@import "./organisms/organism";
+@import "./organisms/event-tab";
 
 // PAGES
 @import "./pages/index";

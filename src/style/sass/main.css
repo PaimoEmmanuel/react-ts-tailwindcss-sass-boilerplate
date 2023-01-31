@@ -1,6 +1,102 @@
-.nav-bar--container {
-  @apply px-[121px] py-[25px] w-full flex justify-between items-center;
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+@font-face {
+  font-family: Dahlia;
+  src: url("../../fonts/dahlia-font/dahlia-bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Dahlia;
+  src: url("../../fonts/dahlia-font/dahlia-medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Dahlia;
+  src: url("../../fonts/dahlia-font/dahlia-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Platform;
+  src: url("../../fonts/platform-font/Platform-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Platform;
+  src: url("../../fonts/platform-font/Platform-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Platform;
+  src: url("../../fonts/platform-font/Platform-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+*,
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 12px;
+  overflow-x: hidden;
+  font-family: "Platform", sans-serif;
+  width: 100%;
+}
+@media screen and (min-width: 360px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-heading;
+}
+
+img {
+  @apply no-click;
+}
+
+@layer utilities {
+  .site-container {
+    @apply max-w-[90rem] px-6 sm:px-16 xl:px-[7.5rem] mx-auto;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+  .no-click {
+    pointer-events: none;
+  }
+}
+.nav-bar {
   background: linear-gradient(90.14deg, rgba(255, 255, 255, 0.6) -0.83%, rgba(255, 255, 255, 0.2) 99.95%, rgba(255, 255, 255, 0.1) 99.95%);
+  backdrop-filter: blur(30px);
+}
+.nav-bar--container {
+  @apply site-container py-[25px] w-full flex justify-between items-center;
 }
 
 .nav-bar--image-logo {
@@ -25,6 +121,112 @@
   @apply absolute right-[-3px] inline-block rounded-[50%] w-[48px] h-[48px] bg-[#fb987e];
 }
 
+.wish__item {
+  @apply flex justify-between pb-6 border-b border-[#212020];
+}
+.wish__dp {
+  @apply w-[7.5rem] h-[7.5rem] rounded-md object-cover;
+  box-shadow: 0px 6px 32px 1px rgba(0, 0, 0, 0.2);
+}
+.wish__profile {
+  @apply flex items-center gap-[1.125rem] text-[1.375rem] font-medium mb-4;
+}
+.wish__profile img {
+  @apply h-11 w-11 object-cover;
+}
+.wish__comment {
+  @apply text-xl mb-5;
+}
+.wish__meta {
+  @apply flex items-center;
+}
+.wish__like-icon {
+  @apply mr-3.5;
+}
+.wish__like-number {
+  @apply mr-9;
+}
+
+.event__tab {
+  @apply site-container;
+}
+.event__tab--btn {
+  @apply flex mb-14;
+}
+.event__tab--btn button {
+  @apply w-1/2 py-4 text-xl;
+}
+.event__tab--btn .active-btn {
+  @apply bg-dark-100 border-b-2 border-b-white;
+}
+.event__tab--head {
+  @apply flex justify-between mb-14;
+}
+.event__tab--filter {
+  @apply flex gap-5 items-center text-2xl;
+}
+.event__tab--filter-text {
+  @apply text-2xl font-medium;
+}
+.event__tab--item {
+  @apply hidden;
+}
+.event__tab .active-tab {
+  @apply block;
+}
+
+.wish__items {
+  @apply flex flex-col gap-14 mb-24;
+}
+.wish__load-more {
+  @apply w-full h-16 flex justify-center items-center bg-dark-200 rounded-full border border-white mb-20;
+}
+
+.gallery-tab {
+  @apply grid grid-cols-4 gap-8 mb-56;
+}
+
 .home {
-  @apply bg-dark;
+  @apply bg-dark text-white;
+}
+.home__banner {
+  @apply site-container pt-24;
+}
+.home__banner--img {
+  @apply w-full rounded-3xl;
+}
+.home__banner--text {
+  @apply text-[6.25rem] leading-[7.25rem] mt-14 font-medium;
+}
+
+.event__detail {
+  @apply mt-[4.5rem] flex justify-between gap-12;
+}
+.event__about {
+  @apply max-w-[28.25rem];
+}
+.event__about--title {
+  @apply font-medium mb-3 text-2xl;
+}
+.event__about--text {
+  @apply text-xl;
+}
+.event__date {
+  @apply flex gap-[8.25rem] whitespace-nowrap;
+}
+.event__date--wrapper {
+  @apply flex flex-col justify-between;
+}
+.event__likes {
+  @apply flex rounded-full border border-white w-11/12 mx-auto justify-center gap-5 h-10 items-center;
+}
+.event__share {
+  @apply flex rounded-full border border-white w-full mx-auto justify-center gap-2 h-10 items-center;
+}
+.event__wish-btn {
+  @apply flex justify-center bg-yellow text-xl w-full h-[5.375rem] items-center rounded-full mt-[4.5rem] text-dark mb-[5.5rem];
+}
+
+.footer {
+  @apply text-center text-xl;
 }

@@ -1,0 +1,78 @@
+// Font --> Dahlia
+// Font
+@font-face {
+  font-family: Dahlia;
+  src: url("../../fonts/dahlia-font/dahlia-bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Dahlia;
+  //   src: url('/assets/fonts/Helvetica/Helvetica.ttf') format('truetype');
+  src: url("../../fonts/dahlia-font/dahlia-medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Dahlia;
+  //   src: url('/assets/fonts/Helvetica/Helvetica.ttf') format('truetype');
+  src: url("../../fonts/dahlia-font/dahlia-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Font --> Platform
+// Font
+@font-face {
+  font-family: Platform;
+  src: url("../../fonts/platform-font/Platform-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Platform;
+  src: url("../../fonts/platform-font/Platform-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Platform;
+  src: url("../../fonts/platform-font/Platform-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 12px; // 1em === 12px
+  @media screen and (min-width: 360px) {
+    font-size: 16px; // 1em === 18px
+  }
+  overflow-x: hidden;
+  font-family: "Platform", sans-serif;
+  width: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-heading;
+}
+img {
+  @apply no-click;
+}
